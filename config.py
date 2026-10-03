@@ -1,8 +1,12 @@
 id="config_file"
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # ---------------- BASIC CONFIG ----------------
-SECRET_KEY = "secret123"
+# Read from .env locally, or from the environment on Render.
+SECRET_KEY = os.getenv("SECRET_KEY", "secret123")
 
 # ---------------- DATABASE ----------------
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))

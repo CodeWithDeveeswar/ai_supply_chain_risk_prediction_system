@@ -12,3 +12,6 @@ env/
 
 # Training Reports
 model/reports/
+
+# Environment variables (never commit secrets)
+.env

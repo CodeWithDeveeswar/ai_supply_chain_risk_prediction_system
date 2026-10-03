@@ -1,55 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Supply Chain AI</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - AI-Based Supply Chain Risk Prediction System</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dark-theme.css') }}">
-</head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/dark-theme.css') }}"
+    />
+  </head>
 
-<body class="login-body">
-
+  <body class="login-body">
     <div class="login-wrapper">
+      <!-- HEADER (NEW) -->
+      <div class="login-header">
+        <h1>AI-Based Supply Chain Risk Prediction System</h1>
+        <p>Smart Risk Detection & Analytics Platform</p>
+      </div>
 
-        <!-- HEADER (NEW) -->
-        <div class="login-header">
-            <h1>AI-Based Supply Chain Risk Prediction System</h1>
-            <p>Smart Risk Detection & Analytics Platform</p>
-        </div>
+      <!-- FORM -->
+      <div class="login-container">
+        <form method="POST" class="login-form">
+          <h2>Admin Login</h2>
 
-        <!-- FORM -->
-        <div class="login-container">
-            <form method="POST" class="login-form">
-                <h2>Admin Login</h2>
+          {% with messages = get_flashed_messages(with_categories=true) %} {% if
+          messages %} {% for category, message in messages %}
+          <div class="flash {{ category }}">{{ message }}</div>
+          {% endfor %} {% endif %} {% endwith %}
 
-                {% with messages = get_flashed_messages(with_categories=true) %}
-                    {% if messages %}
-                        {% for category, message in messages %}
-                            <div class="flash {{ category }}">
-                                {{ message }}
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
+          <div class="input-group">
+            <label>Username</label>
+            <input
+              type="text"
+              name="username"
+              placeholder="Enter username"
+              required
+            />
+          </div>
 
-                <div class="input-group">
-                    <label>Username</label>
-                    <input type="text" name="username" placeholder="Enter username" required>
-                </div>
+          <div class="input-group">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter password"
+              required
+            />
+          </div>
 
-                <div class="input-group">
-                    <label>Password</label>
-                    <input type="password" name="password" placeholder="Enter password" required>
-                </div>
-
-                <button type="submit" class="login-btn">Login</button>
-
-            </form>
-        </div>
-
+          <button type="submit" class="login-btn">Login</button>
+        </form>
+      </div>
     </div>
-
-</body>
+  </body>
 </html>

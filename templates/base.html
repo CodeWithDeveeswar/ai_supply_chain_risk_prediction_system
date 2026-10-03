@@ -1,14 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supply Chain AI</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-Based Supply Chain Risk Prediction System</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dark-theme.css') }}">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/dark-theme.css') }}"
+    />
 
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -17,44 +22,52 @@
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
 
-<body>
-
+  <body>
     <!-- NAVBAR -->
     <nav class="navbar">
-        <div class="nav-left">
-            <span class="logo">AI-Based Supply Chain Risk Prediction System</span>
-        </div>
+      <div class="nav-left">
+        <span class="logo">AI-Based Supply Chain Risk Prediction System</span>
+      </div>
 
-        <div class="nav-right">
-            <a href="/dashboard" class="{% if request.path == '/dashboard' %}active{% endif %}">Dashboard</a>
-            <a href="/predict" class="{% if request.path == '/predict' %}active{% endif %}">Predict</a>
-            <a href="/history" class="{% if request.path == '/history' %}active{% endif %}">History</a>
+      <div class="nav-right">
+        <a
+          href="/dashboard"
+          class="{% if request.path == '/dashboard' %}active{% endif %}"
+          >Dashboard</a
+        >
+        <a
+          href="/predict"
+          class="{% if request.path == '/predict' %}active{% endif %}"
+          >Predict</a
+        >
+        <a
+          href="/history"
+          class="{% if request.path == '/history' %}active{% endif %}"
+          >History</a
+        >
 
-            <span class="user">Admin</span>
-            <a href="/logout" class="logout-btn">Logout</a>
-        </div>
+        <span class="user">Admin</span>
+        <a href="/logout" class="logout-btn">Logout</a>
+      </div>
     </nav>
 
     <!-- FLASH MESSAGES -->
     <div class="flash-container">
-        {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-        {% for category, message in messages %}
-        <div class="flash {{ category }}">
-            {{ message }}
-        </div>
-        {% endfor %}
-        {% endif %}
-        {% endwith %}
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages %}
+      <div class="flash {{ category }}">{{ message }}</div>
+      {% endfor %} {% endif %} {% endwith %}
     </div>
 
     <!-- MAIN CONTENT -->
     <main class="main-content" id="dashboard-content">
-        {% block content %}
-        {% endblock %}
+      {% block content %} {% endblock %}
     </main>
 
     <!-- JS FILES -->
@@ -64,32 +77,26 @@
     <script src="{{ url_for('static', filename='js/history.js') }}"></script>
 
     <script>
-document.addEventListener("DOMContentLoaded", () => {
+      document.addEventListener("DOMContentLoaded", () => {
+        const flashes = document.querySelectorAll(".flash");
 
-    const flashes = document.querySelectorAll(".flash");
+        flashes.forEach((flash) => {
+          // show animation
+          flash.style.opacity = "1";
+          flash.style.transform = "translateY(0)";
 
-    flashes.forEach(flash => {
-
-        // show animation
-        flash.style.opacity = "1";
-        flash.style.transform = "translateY(0)";
-
-        // auto hide after 3 seconds
-        setTimeout(() => {
+          // auto hide after 3 seconds
+          setTimeout(() => {
             flash.style.opacity = "0";
             flash.style.transform = "translateY(-10px)";
 
             // remove from DOM after animation
             setTimeout(() => {
-                flash.remove();
+              flash.remove();
             }, 400);
-
-        }, 3000);
-    });
-
-});
-</script>
-
-</body>
-
+          }, 3000);
+        });
+      });
+    </script>
+  </body>
 </html>

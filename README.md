@@ -1,7 +1,7 @@
 # 🚀 AI-Based Supply Chain Risk Prediction System
 
 [![Python](https://img.shields.io/badge/Python-3.10.11-blue.svg)](https://www.python.org/)
-[![Flask](https://img.shields.io/badge/Flask-2.x-black.svg)](https://flask.palletsprojects.com/)
+[![Flask](https://img.shields.io/badge/Flask-3.0.3-black.svg)](https://flask.palletsprojects.com/)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-RandomForest-orange.svg)](https://scikit-learn.org/)
 [![License](https://img.shields.io/badge/License-Academic-lightgrey.svg)](#-license)
 
@@ -26,25 +26,25 @@ An AI-powered web application that predicts supply chain risk levels using a **R
 
 ## ✨ Features
 
-| | |
-|---|---|
-| 🔐 | Admin Login |
-| 🤖 | AI-Based Risk Prediction |
-| 📂 | Manual Data Entry & CSV Upload |
-| 📊 | Interactive Dashboard with Charts |
-| 📜 | Prediction History |
-| 🔍 | Search & Filter Records |
-| 📥 | Excel Report Export |
-| 🖼️ | Dashboard Image Export |
-| 💾 | SQLite Database Storage |
+|     |                                   |
+| --- | --------------------------------- |
+| 🔐  | Admin Login                       |
+| 🤖  | AI-Based Risk Prediction          |
+| 📂  | Manual Data Entry & CSV Upload    |
+| 📊  | Interactive Dashboard with Charts |
+| 📜  | Prediction History                |
+| 🔍  | Search & Filter Records           |
+| 📥  | Excel Report Export               |
+| 🖼️  | Dashboard Image Export            |
+| 💾  | SQLite Database Storage           |
 
 ---
 
 ## ✅ Requirements
 
-| Requirement | Version |
-|---|---|
-| Python | `3.10.11` |
+| Requirement | Version   |
+| ----------- | --------- |
+| Python      | `3.10.11` |
 
 > 💡 Make sure the correct Python version is installed and active (`python --version`) before creating your virtual environment.
 
@@ -53,6 +53,7 @@ An AI-powered web application that predicts supply chain risk levels using a **R
 ## 🛠️ Technologies Used
 
 **Frontend**
+
 - HTML5
 - CSS3
 - JavaScript
@@ -60,16 +61,19 @@ An AI-powered web application that predicts supply chain risk levels using a **R
 - Chart.js
 
 **Backend**
+
 - Python
 - Flask
 
 **Machine Learning**
+
 - Scikit-learn
 - Pandas
 - NumPy
 - Joblib
 
 **Database**
+
 - SQLite
 
 ---
@@ -77,7 +81,7 @@ An AI-powered web application that predicts supply chain risk levels using a **R
 ## 📂 Project Structure
 
 ```text
-ai_supply_chain_risk_prediction/
+ai_supply_chain_risk_prediction_system/
 │
 ├── app.py
 ├── requirements.txt
@@ -117,13 +121,13 @@ ai_supply_chain_risk_prediction/
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/CodeWithDeveeswar/ai_supply_chain_risk_prediction.git
+git clone https://github.com/CodeWithDeveeswar/ai_supply_chain_risk_prediction_system.git
 ```
 
 **2. Navigate to the project directory**
 
 ```bash
-cd ai_supply_chain_risk_prediction
+cd ai_supply_chain_risk_prediction_system
 ```
 
 **3. (Optional) Create and activate a virtual environment**
@@ -171,10 +175,10 @@ http://127.0.0.1:5000
 
 ## 📊 Machine Learning
 
-| Detail | Description |
-|---|---|
-| **Algorithm** | Random Forest Classifier |
-| **Prediction Classes** | Low, Medium, High Risk |
+| Detail                 | Description                                                                              |
+| ---------------------- | ---------------------------------------------------------------------------------------- |
+| **Algorithm**          | Random Forest Classifier                                                                 |
+| **Prediction Classes** | Low, Medium, High Risk                                                                   |
 | **Evaluation Metrics** | Accuracy, Balanced Accuracy, Classification Report, Confusion Matrix, Feature Importance |
 
 ---

@@ -18,7 +18,6 @@ An AI-powered web application that predicts supply chain risk levels using a **R
 - [Project Structure](#-project-structure)
 - [Installation](#️-installation)
 - [Run the Application](#️-run-the-application)
-- [Deploy to Render](#-deploy-to-render)
 - [Machine Learning](#-machine-learning)
 - [Future Enhancements](#-future-enhancements)
 - [Author](#-author)

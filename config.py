@@ -6,7 +6,7 @@ load_dotenv()
 
 # ---------------- BASIC CONFIG ----------------
 # Read from .env locally, or from the environment on Render.
-SECRET_KEY = os.getenv("SECRET_KEY", "secret123")
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # ---------------- DATABASE ----------------
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))

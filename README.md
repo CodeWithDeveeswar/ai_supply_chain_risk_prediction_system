@@ -44,13 +44,9 @@ An AI-powered web application that predicts supply chain risk levels using a **R
 
 ## 🔐 Login Credentials
 
-A single admin account is used. It is stored in the `users` table and seeded with a default account by `database/db_setup.py`.
-
 | Username | Password   |
 | -------- | ---------- |
 | `admin`  | `admin123` |
-
-> ⚠️ These are default credentials and are intended for local development and academic use only. Change them before exposing the application publicly.
 
 ---
 
@@ -198,40 +194,6 @@ http://127.0.0.1:5000
 ```
 
 Log in with the credentials listed in [Login Credentials](#-login-credentials).
-
----
-
-## ☁️ Deploy to Render
-
-This app is configured for deployment to [Render](https://render.com) as a Python Web Service. The trained model (`model/risk_model.pkl`) and the seeded database (`database/database.db`) are committed to the repository, so no retraining or database setup is needed on the server.
-
-**1. Create the Web Service**
-
-Connect the repository at [dashboard.render.com](https://dashboard.render.com) and use these settings:
-
-| Setting           | Value                             |
-| ----------------- | --------------------------------- |
-| Runtime           | `Python`                          |
-| Build Command     | `pip install -r requirements.txt` |
-| Start Command     | `gunicorn app:app`                |
-| Instance Type     | `Free`                            |
-| Health Check Path | `/`                               |
-
-The Python version is pinned to `3.10.11` via the `.python-version` file, so no version needs to be selected in the dashboard. Pinning is required because Render's default Python (3.14) has no prebuilt wheels for the pinned `numpy`/`matplotlib` versions.
-
-**2. Add the secret key**
-
-Under **Environment**, add:
-
-| Key          | Value                  |
-| ------------ | ---------------------- |
-| `SECRET_KEY` | your random secret key |
-
-**3. Deploy**
-
-Render builds and deploys on every push to the connected branch.
-
-> ⚠️ **Note on the free plan:** Render's filesystem is ephemeral, so newly added predictions and uploaded files are **lost on every deploy or restart**, and the database resets to the committed seed data. For persistence, attach a Render Disk or use a managed PostgreSQL database.
 
 ---
 

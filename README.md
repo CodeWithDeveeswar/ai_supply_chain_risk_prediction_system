@@ -193,8 +193,6 @@ python app.py
 http://127.0.0.1:5000
 ```
 
-Log in with the credentials listed in [Login Credentials](#-login-credentials).
-
 ---
 
 ## 📊 Machine Learning

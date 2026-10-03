@@ -141,11 +141,22 @@ git clone https://github.com/CodeWithDeveeswar/ai_supply_chain_risk_prediction_s
 cd ai_supply_chain_risk_prediction_system
 ```
 
-**3. (Optional) Create and activate a virtual environment**
+**3. Create and activate a virtual environment**
 
 ```bash
 python -m venv venv
-source venv/bin/activate      # On Windows: venv\Scripts\activate
+```
+
+**On Windows:**
+
+```bash
+venv\Scripts\activate
+```
+
+**On macOS/Linux:**
+
+```bash
+source venv/bin/activate
 ```
 
 **4. Install dependencies**
@@ -154,15 +165,27 @@ source venv/bin/activate      # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-**5. (Optional) Configure the secret key**
+**5. Configure the secret key**
 
-`SECRET_KEY` is read from a local `.env` file. If it is not set, the app falls back to a default value, which is fine for local development:
+`SECRET_KEY` is required and must be configured in a local `.env` file.
 
-```bash
+Create a `.env` file in the project root:
+
+```env
 SECRET_KEY=your_random_secret_here
 ```
 
-> 💡 The `.env` file is gitignored and must never be committed.
+Replace `your_random_secret_here` with your actual secret key.
+
+> 💡 The `.env` file is gitignored and must **never be committed to Git or pushed to GitHub**.
+
+> ⚠️ **Note:** The application does not use a default `SECRET_KEY`. You must configure the secret key in `.env` before running the application.
+
+**6. Run the application**
+
+```bash
+python app.py
+```
 
 ---
 
